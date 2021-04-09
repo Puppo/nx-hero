@@ -275,6 +275,16 @@
             "jestConfig": "libs/hero/api-interfaces/jest.config.js",
             "passWithNoTests": true
           }
+        },
+        "doc": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              {
+                "command": "npx typedoc libs/hero/api-interfaces --out docs/libs/hero/api-interfaces"
+              }
+            ]
+          }
         }
       }
     },
