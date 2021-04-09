@@ -225,6 +225,20 @@
             "jestConfig": "apps/hero-api/jest.config.js",
             "passWithNoTests": true
           }
+        },
+        "deploy": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "parallel": false,
+            "commands": [
+              {
+                "command": "npm run nx run hero-api:build:production"
+              },
+              {
+                "command": "sls deploy --config=apps/hero-api/serverless.yml --stage=prod"
+              }
+            ]
+          }
         }
       }
     },

@@ -1,0 +1,39 @@
+service: nx-hero-api
+
+frameworkVersion: '>=2.0.0'
+
+custom:
+  prune:
+    automatic: true
+    number: 3
+  serverless-layers:
+    dependenciesPath: ./apps/hero-api/package.json
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  region: eu-central-1
+  deploymentBucket: nx-hero-api
+  apiGateway:
+    shouldStartNameWithService: true
+plugins:
+  - serverless-layers
+package:
+  individually: true
+  include:
+    - dist/apps/hero-api/**
+  exclude:
+    - '**'
+
+functions:
+  main:
+    handler: dist/apps/hero-api/main.handler
+    events:
+      - http:
+          cors: true
+          path: '/'
+          method: any
+      - http:
+          cors: true
+          path: '{proxy+}'
+          method: any
