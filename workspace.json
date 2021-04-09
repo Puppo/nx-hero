@@ -1,8 +1,6 @@
 {
   "version": 2,
-  "cli": {
-    "defaultCollection": "@nrwl/angular"
-  },
+  "cli": { "defaultCollection": "@nrwl/angular" },
   "defaultProject": "hero-app",
   "generators": {
     "@nrwl/angular:application": {
@@ -16,9 +14,7 @@
       "linter": "eslint",
       "unitTestRunner": "jest"
     },
-    "@nrwl/angular:component": {
-      "style": "scss"
-    }
+    "@nrwl/angular:component": { "style": "scss" }
   },
   "projects": {
     "hero-app": {
@@ -78,20 +74,17 @@
         },
         "serve": {
           "executor": "@angular-devkit/build-angular:dev-server",
-          "options": {
-            "browserTarget": "hero-app:build"
+          "options": { 
+            "browserTarget": "hero-app:build",
+            "proxyConfig": "apps/hero-app/proxy.conf.json"
           },
           "configurations": {
-            "production": {
-              "browserTarget": "hero-app:build:production"
-            }
+            "production": { "browserTarget": "hero-app:build:production" }
           }
         },
         "extract-i18n": {
           "executor": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "hero-app:build"
-          }
+          "options": { "browserTarget": "hero-app:build" }
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
@@ -104,9 +97,7 @@
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/hero-app"
-          ],
+          "outputs": ["coverage/apps/hero-app"],
           "options": {
             "jestConfig": "apps/hero-app/jest.config.js",
             "passWithNoTests": true
@@ -127,18 +118,12 @@
             "devServerTarget": "hero-app:serve"
           },
           "configurations": {
-            "production": {
-              "devServerTarget": "hero-app:serve:production"
-            }
+            "production": { "devServerTarget": "hero-app:serve:production" }
           }
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "apps/hero-app-e2e/**/*.{js,ts}"
-            ]
-          }
+          "options": { "lintFilePatterns": ["apps/hero-app-e2e/**/*.{js,ts}"] }
         }
       }
     },
@@ -159,9 +144,7 @@
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/hero/data-access"
-          ],
+          "outputs": ["coverage/libs/hero/data-access"],
           "options": {
             "jestConfig": "libs/hero/data-access/jest.config.js",
             "passWithNoTests": true
@@ -186,9 +169,7 @@
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/hero/ui"
-          ],
+          "outputs": ["coverage/libs/hero/ui"],
           "options": {
             "jestConfig": "libs/hero/ui/jest.config.js",
             "passWithNoTests": true
@@ -203,16 +184,12 @@
       "targets": {
         "build": {
           "executor": "@nrwl/node:build",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/apps/hero-api",
             "main": "apps/hero-api/src/main.ts",
             "tsConfig": "apps/hero-api/tsconfig.app.json",
-            "assets": [
-              "apps/hero-api/src/assets"
-            ]
+            "assets": ["apps/hero-api/src/assets"]
           },
           "configurations": {
             "production": {
@@ -230,23 +207,15 @@
         },
         "serve": {
           "executor": "@nrwl/node:execute",
-          "options": {
-            "buildTarget": "hero-api:build"
-          }
+          "options": { "buildTarget": "hero-api:build" }
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "apps/hero-api/**/*.ts"
-            ]
-          }
+          "options": { "lintFilePatterns": ["apps/hero-api/**/*.ts"] }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/hero-api"
-          ],
+          "outputs": ["coverage/apps/hero-api"],
           "options": {
             "jestConfig": "apps/hero-api/jest.config.js",
             "passWithNoTests": true
@@ -261,19 +230,34 @@
       "targets": {
         "lint": {
           "executor": "@nrwl/linter:eslint",
+          "options": { "lintFilePatterns": ["libs/hero/controllers/**/*.ts"] }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/hero/controllers"],
           "options": {
-            "lintFilePatterns": [
-              "libs/hero/controllers/**/*.ts"
-            ]
+            "jestConfig": "libs/hero/controllers/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "hero-api-interfaces": {
+      "root": "libs/hero/api-interfaces",
+      "sourceRoot": "libs/hero/api-interfaces/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/hero/api-interfaces/**/*.ts"]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/hero/controllers"
-          ],
+          "outputs": ["coverage/libs/hero/api-interfaces"],
           "options": {
-            "jestConfig": "libs/hero/controllers/jest.config.js",
+            "jestConfig": "libs/hero/api-interfaces/jest.config.js",
             "passWithNoTests": true
           }
         }

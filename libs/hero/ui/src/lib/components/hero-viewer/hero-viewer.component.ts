@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { HeroDTO } from '@flowing/hero/data-access';
+import { HeroDTO } from '@flowing/hero/api-interfaces';
 
 @Component({
   selector: 'flw-hero-viewer',

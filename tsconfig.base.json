@@ -17,7 +17,8 @@
     "paths": {
       "@flowing/hero/data-access": ["libs/hero/data-access/src/index.ts"],
       "@flowing/hero/ui": ["libs/hero/ui/src/index.ts"],
-      "@flowing/hero/controllers": ["libs/hero/controllers/src/index.ts"]
+      "@flowing/hero/controllers": ["libs/hero/controllers/src/index.ts"],
+      "@flowing/hero/api-interfaces": ["libs/hero/api-interfaces/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
