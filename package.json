@@ -53,6 +53,7 @@
     "@angular-eslint/template-parser": "~2.0.2",
     "@angular/compiler-cli": "^11.2.0",
     "@angular/language-service": "^11.2.0",
+    "@jefiozie/ngx-aws-deploy": "^3.0.1",
     "@nestjs/schematics": "^7.0.0",
     "@nestjs/testing": "^7.0.0",
     "@nrwl/angular": "^12.0.0",

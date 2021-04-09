@@ -18,7 +18,8 @@
       "@flowing/hero/data-access": ["libs/hero/data-access/src/index.ts"],
       "@flowing/hero/controllers": ["libs/hero/controllers/src/index.ts"],
       "@flowing/hero/api-interfaces": ["libs/hero/api-interfaces/src/index.ts"],
-      "@flowing/hero/hero-list": ["libs/hero/hero-list/src/index.ts"]
+      "@flowing/hero/hero-list": ["libs/hero/hero-list/src/index.ts"],
+      "@flowing/common/tokens": ["libs/common/tokens/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

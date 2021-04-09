@@ -1,27 +1,18 @@
 {
   "implicitDependencies": {
-    "package.json": {
-      "dependencies": "*",
-      "devDependencies": "*"
-    },
+    "package.json": { "dependencies": "*", "devDependencies": "*" },
     ".eslintrc.json": "*"
   },
-  "affected": {
-    "defaultBase": "main"
-  },
+  "affected": { "defaultBase": "main" },
   "npmScope": "flowing",
   "tasksRunnerOptions": {
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
-      "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
-      }
+      "options": { "cacheableOperations": ["build", "lint", "test", "e2e"] }
     }
   },
   "projects": {
-    "hero-app": {
-      "tags": ["type:app", "scope:hero", "platform:web"]
-    },
+    "hero-app": { "tags": ["type:app", "scope:hero", "platform:web"] },
     "hero-app-e2e": {
       "tags": ["type:e2e", "scope:hero", "platform:web"],
       "implicitDependencies": ["hero-app"]
@@ -29,9 +20,7 @@
     "hero-data-access": {
       "tags": ["type:data-access", "scope:hero", "platform:web"]
     },
-    "hero-api": {
-      "tags": ["type:api", "scope:hero", "platform:node"]
-    },
+    "hero-api": { "tags": ["type:api", "scope:hero", "platform:node"] },
     "hero-controllers": {
       "tags": ["type:feature", "scope:hero", "platform:node"]
     },
@@ -40,6 +29,7 @@
     },
     "hero-hero-list": {
       "tags": ["type:feature", "scope:hero", "platform:web"]
-    }
+    },
+    "common-tokens": { "tags": ["type:util", "scope:shared", "platform:web"] }
   }
 }

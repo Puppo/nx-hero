@@ -112,6 +112,10 @@
             "jestConfig": "apps/hero-app/jest.config.js",
             "passWithNoTests": true
           }
+        },
+        "deploy": {
+          "executor": "@jefiozie/ngx-aws-deploy:deploy",
+          "options": {}
         }
       }
     },
@@ -324,6 +328,33 @@
           ],
           "options": {
             "jestConfig": "libs/hero/hero-list/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "common-tokens": {
+      "projectType": "library",
+      "root": "libs/common/tokens",
+      "sourceRoot": "libs/common/tokens/src",
+      "prefix": "flw",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/common/tokens/src/**/*.ts",
+              "libs/common/tokens/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/common/tokens"
+          ],
+          "options": {
+            "jestConfig": "libs/common/tokens/jest.config.js",
             "passWithNoTests": true
           }
         }
