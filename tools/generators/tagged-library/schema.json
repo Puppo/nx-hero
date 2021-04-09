@@ -1,0 +1,93 @@
+{
+  "cli": "nx",
+  "id": "tagged-library",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Library name",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      }
+    },
+    "type": {
+      "type": "string",
+      "description": "Type of the library",
+      "enum": [
+        "data-access",
+        "feature",
+        "ui",
+        "util"
+      ],
+      "default": "feature",
+      "x-prompt": {
+        "message": "What type of library is it?",
+        "items": [
+          {
+            "value": "data-access",
+            "label": "Data Access"
+          },
+          {
+            "value": "feature",
+            "label": "Feature"
+          },
+          {
+            "value": "ui",
+            "label": "Ui"
+          },
+          {
+            "value": "util",
+            "label": "Util"
+          }
+        ]
+      }
+    },
+    "scope": {
+      "type": "string",
+      "description": "Scope of the library",
+      "default": "shared",
+      "x-prompt": "What app doest this library belong to?"
+    },
+    "platform": {
+      "type": "string",
+      "description": "Platform of the library",
+      "enum": [
+        "web",
+        "node",
+        "any"
+      ],
+      "default": "web",
+      "x-prompt": {
+        "message": "What platform can this library run on?",
+        "items": [
+          {
+            "value": "web",
+            "label": "Web"
+          },
+          {
+            "value": "node",
+            "label": "Node"
+          },
+          {
+            "value": "any",
+            "label": "Any"
+          }
+        ]
+      }
+    },
+    "directory": {
+      "type": "string",
+      "default": "",
+      "x-prompt": "What is the directory?"
+    },
+    "prefix": {
+      "type": "string",
+      "default": "flw",
+      "x-prompt": "What is the Prefix?"
+    }
+  },
+  "required": [
+    "name"
+  ]
+}
