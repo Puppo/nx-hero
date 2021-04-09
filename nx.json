@@ -1,23 +1,45 @@
 {
   "implicitDependencies": {
-    "package.json": { "dependencies": "*", "devDependencies": "*" },
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
     ".eslintrc.json": "*"
   },
-  "affected": { "defaultBase": "master" },
+  "affected": {
+    "defaultBase": "master"
+  },
   "npmScope": "flowing",
   "tasksRunnerOptions": {
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
-      "options": { "cacheableOperations": ["build", "lint", "test", "e2e"] }
+      "options": {
+        "cacheableOperations": ["build", "lint", "test", "e2e"]
+      }
     }
   },
   "projects": {
-    "hero-app": { "tags": [] },
-    "hero-app-e2e": { "tags": [], "implicitDependencies": ["hero-app"] },
-    "hero-data-access": { "tags": [] },
-    "hero-ui": { "tags": [] },
-    "hero-api": { "tags": [] },
-    "hero-controllers": { "tags": [] },
-    "hero-api-interfaces": { "tags": [] }
+    "hero-app": {
+      "tags": ["type:app", "scope:hero", "platform:web"]
+    },
+    "hero-app-e2e": {
+      "tags": ["type:e2e", "scope:hero", "platform:web"],
+      "implicitDependencies": ["hero-app"]
+    },
+    "hero-data-access": {
+      "tags": ["type:data-access", "scope:hero", "platform:web"]
+    },
+    "hero-api": {
+      "tags": ["type:api", "scope:hero", "platform:node"]
+    },
+    "hero-controllers": {
+      "tags": ["type:feature", "scope:hero", "platform:node"]
+    },
+    "hero-api-interfaces": {
+      "tags": ["type:util", "scope:hero", "platform:any"]
+    },
+    "hero-hero-list": {
+      "tags": ["type:feature", "scope:hero", "platform:web"]
+    }
   }
 }

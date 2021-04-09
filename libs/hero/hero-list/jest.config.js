@@ -1,5 +1,5 @@
 module.exports = {
-  displayName: 'hero-ui',
+  displayName: 'hero-hero-list',
   preset: '../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
@@ -14,7 +14,7 @@ module.exports = {
       },
     },
   },
-  coverageDirectory: '../../../coverage/libs/hero/ui',
+  coverageDirectory: '../../../coverage/libs/hero/hero-list',
   snapshotSerializers: [
     'jest-preset-angular/build/AngularNoNgAttributesSnapshotSerializer.js',
     'jest-preset-angular/build/AngularSnapshotSerializer.js',
